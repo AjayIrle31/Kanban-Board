@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+:root{
+    --background-color: #353131;
+    --primary-text-color: #d8d1d1;
+    --bg-button-color: #5c5c5c;
+    --nav-background-color: rgba(0, 0, 0, 0.1);
+
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --padding-s: 5px;
+    --padding-m: 10px;
+    --padding-l: 15px;
+    --padding-xl: 20px;
+    --padding-xxl: 25px;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--nav-padding);
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: var(--nav-background-color);
+    border: 2px solid black;
+}
+
+nav button{
+    background-color: var(--bg-button-color);
+    border: none;
+    outline: none;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    padding: var(--padding-m) var(--padding-l);
+}
+
+section{
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: var(--padding-xxl);
+}
+
+section .task-column{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-m);
+    border-radius: 5px;
+    background-color: var(--nav-background-color);
+    border: 2px solid black;
+}
+
+section .task-column .hover-over{
+    border: 2px dashed white;
+    scale:1.02;
+}
+
+section .task-column .heading{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-m);
+}
+
+section .task-column .task{
+    background-color: var(--bg-button-color);
+    padding: var(--padding-m);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    cursor:grab;
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-s) var(--padding-m);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: red;
+    color: var(--primary-text-color);
+}
