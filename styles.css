@@ -1,24 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
 }
 
-main{
+main {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+
 }
 
-:root{
+:root {
     --background-color: #353131;
     --primary-text-color: #d8d1d1;
     --bg-button-color: #5c5c5c;
@@ -33,12 +34,12 @@ main{
     --padding-xxl: 25px;
 }
 
-body{
+body {
     background-color: var(--background-color);
     color: var(--primary-text-color);
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     padding: var(--nav-padding);
@@ -48,7 +49,7 @@ nav{
     border: 2px solid black;
 }
 
-nav button{
+nav button {
     background-color: var(--bg-button-color);
     border: none;
     outline: none;
@@ -57,7 +58,7 @@ nav button{
     padding: var(--padding-m) var(--padding-l);
 }
 
-section{
+section {
     padding: var(--section-padding);
     display: flex;
     justify-content: space-between;
@@ -65,22 +66,22 @@ section{
     gap: var(--padding-xxl);
 }
 
-section .task-column{
+section .task-column {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: var(--padding-m);
     border-radius: 5px;
     background-color: var(--nav-background-color);
-    border: 2px solid black;
+    border: none;
 }
 
-section .task-column .hover-over{
+section .task-column.hover-over {
     border: 2px dashed white;
-    scale:1.02;
+    transform: scale(1.02);
 }
 
-section .task-column .heading{
+section .task-column .heading {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -88,17 +89,17 @@ section .task-column .heading{
     padding: var(--padding-m);
 }
 
-section .task-column .task{
+section .task-column .task {
     background-color: var(--bg-button-color);
     padding: var(--padding-m);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     gap: var(--padding-s);
-    cursor:grab;
+    cursor: grab;
 }
 
-section .task-column .task button{
+section .task-column .task button {
     align-self: flex-end;
     cursor: pointer;
     padding: var(--padding-s) var(--padding-m);
@@ -107,4 +108,61 @@ section .task-column .task button{
     border-radius: 5px;
     background-color: red;
     color: var(--primary-text-color);
+}
+
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal .bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .center {
+    background-color: var(--background-color);
+    padding: var(--padding-xxl);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-m);
+    z-index: 10;
+}
+
+.modal .center input,
+.modal .center textarea,
+.modal .center select {
+    background-color: var(--nav-background-color);
+    border: none;
+    outline: none;
+    color: var(--primary-text-color);
+    border-radius: 5px;
+    padding: var(--padding-m);
+}
+
+.modal .center button {
+    background-color: #000000;
+    color: var(--primary-text-color);
+    outline: none;
+    border: none;
+    width: 70px;
+    align-self: center;
+    border-radius: 2%;
 }
